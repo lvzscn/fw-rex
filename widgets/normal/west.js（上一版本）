@@ -284,8 +284,8 @@ function buildItem(item, mediaType, { rank, customSub } = {}) {
         subTitle: "", 
         
         // 核心规范：严格的海报双重输出
-        posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "",
-        backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : "",
+        posterPath: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "",
+        backdropPath: item.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${item.backdrop_path}` : "",
         
         // 信息降级到竖版的卡片下边
         description: `${descInfo}\n${item.overview || "暂无简介"}`,

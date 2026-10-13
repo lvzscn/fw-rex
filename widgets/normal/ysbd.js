@@ -181,7 +181,7 @@ function safeJsonParse(data) {
 
 function getTmdbImage(path) {
     if (!path) return undefined;
-    if (path.startsWith("/")) return "https://image.tmdb.org/t/p/w500" + path;
+    if (path.startsWith("/")) return "https://tmdb.jane77u.gq/t/p/w500" + path;
     return path;
 }
 
@@ -211,7 +211,7 @@ function cleanDoubanTitle(rawTitle) {
 
 async function searchTmdb(title, year, apiKey, isTv) {
     if (!title) return null;
-    var url = "https://api.themoviedb.org/3/search/multi?api_key=" + apiKey + "&language=zh-CN&query=" + encodeURIComponent(title);
+    var url = "https://tmdb.jane77u.gq/3/search/multi?api_key=" + apiKey + "&language=zh-CN&query=" + encodeURIComponent(title);
     try {
         var res = await Widget.http.get(url);
         var data = safeJsonParse(res.data);
@@ -365,7 +365,7 @@ async function loadTMDBModule(params) {
     if (sortMethod && sortMethod.includes("vote_average")) queryParams["vote_count.gte"] = 100;
 
     var endpoint = (mode === "movie") ? "/discover/movie" : "/discover/tv";
-    var baseUrl = "https://api.themoviedb.org/3";
+    var baseUrl = "https://tmdb.jane77u.gq/3";
 
     try {
         var queryString = Object.keys(queryParams).map(k => k + '=' + queryParams[k]).join('&');
@@ -400,7 +400,7 @@ async function loadCalendarModule(params) {
     var exactDateStr = year + "-" + month + "-" + day; // 最终得到比如 2024-05-20
     
     // 🌐 核心黑科技 2：拿着精准日期，去 TMDB “点杀”获取当天的影视
-    var baseUrl = "https://api.themoviedb.org/3/discover";
+    var baseUrl = "https://tmdb.jane77u.gq/3/discover";
     var commonParams = `api_key=${DEFAULT_TMDB_KEY}&language=zh-CN&page=${page}&sort_by=popularity.desc`;
     var rawResults = [];
 

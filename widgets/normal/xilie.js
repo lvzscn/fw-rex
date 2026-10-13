@@ -151,8 +151,8 @@ function buildItem({ id, tmdbId, type, title, date, poster, backdrop, rating, ge
         description: date ? `${date} · ⭐ ${rating}` : `⭐ ${rating}`, 
         releaseDate: date,
         
-        posterPath: poster ? `https://image.tmdb.org/t/p/w500${poster}` : "",
-        backdropPath: backdrop ? `https://image.tmdb.org/t/p/w780${backdrop}` : "",
+        posterPath: poster ? `https://tmdb.jane77u.gq/t/p/w500${poster}` : "",
+        backdropPath: backdrop ? `https://tmdb.jane77u.gq/t/p/w780${backdrop}` : "",
         rating: parseFloat(rating) || 0
     };
 }
