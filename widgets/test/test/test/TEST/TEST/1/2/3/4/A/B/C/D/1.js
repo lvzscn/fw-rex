@@ -92,7 +92,7 @@ async function loadGuduoRank(params = {}) {
         type: "tmdb", 
         title: item.tmdbTitle || item.title,
         description: `🏆 TOP ${item.rank} | 🔥 热度: ${item.heat} | 评分: ${item.rating}\n\n${item.overview || ''}`,
-        coverUrl: item.posterPath ? `https://image.tmdb.org/t/p/w500${item.posterPath}` : undefined,
+        coverUrl: item.posterPath ? `https://tmdb.jane77u.gq/t/p/w500${item.posterPath}` : undefined,
         posterPath: item.posterPath,
         mediaType: item.mediaType,
       });
@@ -114,7 +114,7 @@ async function loadTmdbList(params = {}) {
   if (listSelect === "custom") {
     url = params.custom_url || "";
   } else {
-    url = `https://www.themoviedb.org/list/${listSelect}`;
+    url = `https://tmdb.jane77u.gq/list/${listSelect}`;
   }
 
   // 2. 核心：强制追加 ?view=grid 以保证 HTML 结构是网格模式
@@ -128,7 +128,7 @@ async function loadTmdbList(params = {}) {
     // 3. 模拟浏览器请求网页源码
     const response = await Widget.http.get(url, {
       headers: {
-        Referer: "https://www.themoviedb.org/",
+        Referer: "https://tmdb.jane77u.gq/",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
       }
     });

@@ -127,8 +127,8 @@ function getGenreText(ids) {
 
 // ✨ 核心渲染拦截函数：恢复 year 和 releaseDate 的赋值
 function buildItem({ id, tmdbId, type, title, poster, backdrop, rating, subTitle, desc, year, releaseDate }) {
-    const fullPoster = poster && poster.startsWith("http") ? poster : (poster ? `https://image.tmdb.org/t/p/w500${poster}` : "");
-    const fullBackdrop = backdrop && backdrop.startsWith("http") ? backdrop : (backdrop ? `https://image.tmdb.org/t/p/w780${backdrop}` : "");
+    const fullPoster = poster && poster.startsWith("http") ? poster : (poster ? `https://tmdb.jane77u.gq/t/p/w500${poster}` : "");
+    const fullBackdrop = backdrop && backdrop.startsWith("http") ? backdrop : (backdrop ? `https://tmdb.jane77u.gq/t/p/w780${backdrop}` : "");
 
     return {
         id: String(id),

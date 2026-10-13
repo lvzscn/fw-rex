@@ -210,7 +210,7 @@ async function loadUpdatesLogic(user, clientId, sort, page) {
                 subTitle: "", 
                 releaseDate: displayStr, 
                 year: yearStr, 
-                posterPath: d.poster_path ? `https://image.tmdb.org/t/p/w500${d.poster_path}` : "",
+                posterPath: d.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${d.poster_path}` : "",
                 description: `上次观看: ${item.watchedDate.split("T")[0]}\n${d.overview}`
             };
         });
@@ -266,7 +266,7 @@ async function fetchTmdbDetail(id, type, subInfo, originalTitle) {
             releaseDate: fullDate,       
             year: year, 
             description: `记录时间: ${subInfo}\n${d.overview || "暂无简介"}`, 
-            posterPath: d.poster_path ? `https://image.tmdb.org/t/p/w500${d.poster_path}` : ""
+            posterPath: d.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${d.poster_path}` : ""
         };
     } catch (e) { return null; }
 }

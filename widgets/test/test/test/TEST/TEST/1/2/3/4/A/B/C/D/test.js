@@ -90,7 +90,7 @@ async function loadGuduoRank(params = {}) {
     const results = [];
 
     for (const item of items) {
-      const coverUrl = item.posterPath ? `https://image.tmdb.org/t/p/w500${item.posterPath}` : "";
+      const coverUrl = item.posterPath ? `https://tmdb.jane77u.gq/t/p/w500${item.posterPath}` : "";
       results.push({
         id: item.tmdbId ? item.tmdbId.toString() : item.title,
         type: "tmdb", 
@@ -152,7 +152,7 @@ async function loadTmdbList(params = {}) {
         type: "tmdb",
         title: item.title || item.name,
         description: `⭐ 评分: ${item.vote_average} | 📅 上映: ${item.release_date || item.first_air_date}\n\n${item.overview}`,
-        coverUrl: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "",
+        coverUrl: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "",
         posterPath: item.poster_path,
         backdropPath: item.backdrop_path,
         mediaType: mediaType,

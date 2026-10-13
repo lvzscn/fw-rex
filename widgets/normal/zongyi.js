@@ -201,8 +201,8 @@ async function loadVarietyUltimate(params = {}) {
                 genreTitle: finalSubTitle, 
                 subTitle: finalSubTitle,
                 
-                posterPath: detail.poster_path ? `https://image.tmdb.org/t/p/w500${detail.poster_path}` : "",
-                backdropPath: detail.backdrop_path ? `https://image.tmdb.org/t/p/w780${detail.backdrop_path}` : "",
+                posterPath: detail.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${detail.poster_path}` : "",
+                backdropPath: detail.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${detail.backdrop_path}` : "",
                 description: `📅 播出时间: ${sortDate}\n${detail.overview || "暂无简介"}`,
                 rating: parseFloat(ratingNum),
                 
