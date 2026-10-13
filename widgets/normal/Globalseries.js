@@ -186,8 +186,8 @@ function buildItem(item, forceMediaType) {
         releaseDate: releaseDate, 
         genreTitle: genreText,    
         subTitle: "",            
-        posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "", 
-        backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : "", 
+        posterPath: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "", 
+        backdropPath: item.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${item.backdrop_path}` : "", 
         description: `${typeTag} | ⭐ ${score}\n${item.overview || "暂无简介"}`,
         rating: item.vote_average || 0,
         _popularity: item.popularity || 0,
@@ -394,8 +394,8 @@ async function loadGenreRank(params = {}) {
                 description: `${date} · ⭐ ${score}\n${item.overview || "暂无简介"}`,
                 releaseDate: date,
                 year: year,
-                posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "",
-                backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : "",
+                posterPath: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "",
+                backdropPath: item.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${item.backdrop_path}` : "",
                 rating: parseFloat(score) || 0
             };
         });
