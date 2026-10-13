@@ -70,7 +70,7 @@ async function loadGuduoRank(params = {}) {
     // 遍历数据并转为 Forward 认识的 VideoItem 格式
     for (const item of items) {
       const coverUrl = item.posterPath 
-        ? `https://image.tmdb.org/t/p/w500${item.posterPath}` 
+        ? `https://tmdb.jane77u.gq/t/p/w500${item.posterPath}` 
         : "";
 
       results.push({

@@ -44,8 +44,8 @@ function buildItem({ id, tmdbId, type, title, date, poster, backdrop, rating, ge
         genreTitle: genreText || (type === "tv" ? "剧集" : "电影"), 
         description: baseInfo ? (baseInfo + overview) : (desc || "暂无简介"),
         releaseDate: date,
-        posterPath: poster ? `https://image.tmdb.org/t/p/w500${poster}` : "",
-        backdropPath: backdrop ? `https://image.tmdb.org/t/p/w780${backdrop}` : "",
+        posterPath: poster ? `https://tmdb.jane77u.gq/t/p/w500${poster}` : "",
+        backdropPath: backdrop ? `https://tmdb.jane77u.gq/t/p/w780${backdrop}` : "",
         subTitle: subTitle
     };
 }
@@ -384,8 +384,8 @@ function movie_buildItem(item) {
         id: String(item.id), tmdbId: parseInt(item.id), type: "tmdb", mediaType: "movie",
         title: item.title, releaseDate: releaseDate, genreTitle: movie_getGenreText(item.genre_ids),    
         subTitle: `${releaseDate.substring(0,4)}`,            
-        posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "", 
-        backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : "", 
+        posterPath: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "", 
+        backdropPath: item.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${item.backdrop_path}` : "", 
         description: `电影\n${item.overview || "暂无简介"}`
     };
 }
@@ -446,8 +446,8 @@ async function fetchGenreRankData(mediaType, genre, region, sort_rule, page) {
                 releaseDate: date,
                 subTitle: `${date ? date.substring(0, 4) : "未知"}`, 
                 description: `${date}\n${item.overview || "暂无简介"}`,
-                posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "", 
-                backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : "", 
+                posterPath: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "", 
+                backdropPath: item.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${item.backdrop_path}` : "", 
                 _popularity: item.popularity || 0,
                 _date: date || "1970-01-01"
             };
@@ -531,8 +531,8 @@ async function loadVarietyShows(params = {}) {
                 genreTitle: genreLabel, releaseDate: date, 
                 subTitle: `${date ? date.substring(0, 4) : "未知"}`, 
                 description: `${date}\n${item.overview || "暂无简介"}`,
-                posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "", 
-                backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : ""
+                posterPath: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "", 
+                backdropPath: item.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${item.backdrop_path}` : ""
             };
         });
     } catch (e) { return [{ id: "err", type: "text", title: "加载失败" }]; }
@@ -589,8 +589,8 @@ async function searchRtTmdb(rtItem, rank) {
             id: String(match.id), tmdbId: match.id, type: "tmdb", mediaType: rtItem.mediaType, title: `${rank}. ${match.name || match.title}`, 
             genreTitle: getGlobalGenreText(match.genre_ids) || (rtItem.mediaType === "movie" ? "电影" : "剧集"),
             description: `${dateStr}\n原名: ${rtItem.title}`, releaseDate: dateStr, subTitle: customSub, 
-            posterPath: match.poster_path ? `https://image.tmdb.org/t/p/w500${match.poster_path}` : "", 
-            backdropPath: match.backdrop_path ? `https://image.tmdb.org/t/p/w780${match.backdrop_path}` : ""
+            posterPath: match.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${match.poster_path}` : "", 
+            backdropPath: match.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${match.backdrop_path}` : ""
         };
     } catch (e) { return null; }
 }
@@ -604,8 +604,8 @@ function buildImdbItem(item, forceType) {
         subTitle: fullDate || "", 
         description: fullDate ? `${fullDate}\n${item.overview || "暂无简介"}` : (item.overview || "暂无简介"),
         releaseDate: fullDate, 
-        posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "", 
-        backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : "",
+        posterPath: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "", 
+        backdropPath: item.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${item.backdrop_path}` : "",
         year: fullDate.substring(0, 4), 
         genreTitle: getGlobalGenreText(item.genre_ids) || (type === "tv" ? "剧集" : "电影")
     };
@@ -669,8 +669,8 @@ async function handleTraktList(listType, traktType, traktClientId, page) {
                 genreTitle: getGlobalGenreText(d.genres?.map(g => g.id)), releaseDate: d.first_air_date || d.release_date || "",
                 subTitle: stats, 
                 description: `${d.first_air_date || d.release_date || ""}\n${d.overview || "暂无简介"}`,
-                posterPath: d.poster_path ? `https://image.tmdb.org/t/p/w500${d.poster_path}` : "", 
-                backdropPath: d.backdrop_path ? `https://image.tmdb.org/t/p/w780${d.backdrop_path}` : ""
+                posterPath: d.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${d.poster_path}` : "", 
+                backdropPath: d.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${d.backdrop_path}` : ""
             };
         } catch (e) { return null; }
     });
@@ -679,8 +679,8 @@ async function handleTraktList(listType, traktType, traktClientId, page) {
 
 function mergeDoubanTmdb(target, source) {
     target.id = String(source.id); target.tmdbId = source.id;
-    target.posterPath = source.poster_path ? `https://image.tmdb.org/t/p/w500${source.poster_path}` : target.posterPath;
-    target.backdropPath = source.backdrop_path ? `https://image.tmdb.org/t/p/w780${source.backdrop_path}` : "";
+    target.posterPath = source.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${source.poster_path}` : target.posterPath;
+    target.backdropPath = source.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${source.backdrop_path}` : "";
     const date = source.first_air_date || source.release_date || ""; target.genreTitle = getGlobalGenreText(source.genre_ids) || (target.mediaType === "tv" ? "剧集" : "电影"); target.releaseDate = date;
     target.description = (date ? `${date} · ${target.subTitle}` : target.subTitle) + (source.overview ? `\n${source.overview}` : "\n暂无简介"); target.rating = source.vote_average ? parseFloat(source.vote_average) : 0;
 }
@@ -760,8 +760,8 @@ async function loadPlatformMatrixData(mediaType, params) {
             const date = item.first_air_date || item.release_date || "";
             return {
                 id: String(item.id), tmdbId: item.id, type: "tmdb", mediaType: mediaType, title: item.name || item.title, date: date, releaseDate: date,
-                posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "", 
-                backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : "", 
+                posterPath: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "", 
+                backdropPath: item.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${item.backdrop_path}` : "", 
                 genreTitle: getGlobalGenreText(item.genre_ids),
                 description: `${date}\n${item.overview || "暂无简介"}`
             };
@@ -829,8 +829,8 @@ async function searchTmdbForTop10(queryTitle, mediaType, rank) {
             return {
                 id: String(item.id), tmdbId: parseInt(item.id), type: "tmdb", mediaType: mediaType, title: item.name || item.title,
                 releaseDate: date, year: date.substring(0, 4), genreTitle: getGlobalGenreText(item.genre_ids),
-                subTitle: `TOP ${rank}`, posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "",
-                backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : "",
+                subTitle: `TOP ${rank}`, posterPath: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "",
+                backdropPath: item.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${item.backdrop_path}` : "",
                 description: `TOP ${rank}\n${item.overview || "暂无简介"}`
             };
         }
@@ -847,7 +847,7 @@ async function fetchTmdbFallback_Top10(platform, region, mediaType) {
             return {
                 id: String(item.id), tmdbId: parseInt(item.id), type: "tmdb", mediaType: mediaType, title: item.name || item.title,
                 releaseDate: date, year: date.substring(0, 4), genreTitle: getGlobalGenreText(item.genre_ids), subTitle: `TOP ${index + 1}`,
-                posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "", backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : "",
+                posterPath: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "", backdropPath: item.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${item.backdrop_path}` : "",
                 description: `TOP ${index + 1}\n${item.overview || "暂无简介"}`
             };
         });
@@ -943,8 +943,8 @@ async function sanitizeAndEnsureTmdb(items) {
                 genreTitle: getGenreText(tmdbMatch.genre_ids),
                 description: tmdbMatch.first_air_date || tmdbMatch.release_date || parseDate(rawDate) || "即将播出",
                 releaseDate: tmdbMatch.first_air_date || tmdbMatch.release_date || parseDate(rawDate),
-                posterPath: tmdbMatch.poster_path ? `https://image.tmdb.org/t/p/w500${tmdbMatch.poster_path}` : "",
-                backdropPath: tmdbMatch.backdrop_path ? `https://image.tmdb.org/t/p/w780${tmdbMatch.backdrop_path}` : "",
+                posterPath: tmdbMatch.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${tmdbMatch.poster_path}` : "",
+                backdropPath: tmdbMatch.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${tmdbMatch.backdrop_path}` : "",
                 rating: tmdbMatch.vote_average ? tmdbMatch.vote_average.toFixed(1) : (item.rating || "0.0")
             };
         }
