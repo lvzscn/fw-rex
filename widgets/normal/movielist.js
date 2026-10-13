@@ -120,8 +120,8 @@ function buildItem(item) {
         genreTitle: genreText,
         description: releaseDate ? `${releaseDate} · ⭐ ${score}` : `⭐ ${score}`,
         releaseDate: releaseDate,
-        posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "",
-        backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : "",
+        posterPath: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "",
+        backdropPath: item.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${item.backdrop_path}` : "",
         rating: parseFloat(score)
     };
 }

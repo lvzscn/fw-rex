@@ -149,8 +149,8 @@ function buildItem({ id, tmdbId, type, title, date, poster, backdrop, rating, ge
         // 传递给内核提取横版年份
         releaseDate: date,
         
-        posterPath: poster ? `https://image.tmdb.org/t/p/w500${poster}` : "",
-        backdropPath: backdrop ? `https://image.tmdb.org/t/p/w780${backdrop}` : "",
+        posterPath: poster ? `https://tmdb.jane77u.gq/t/p/w500${poster}` : "",
+        backdropPath: backdrop ? `https://tmdb.jane77u.gq/t/p/w780${backdrop}` : "",
         rating: parseFloat(rating) || 0,
         subTitle: subTitle // 备用保留
     };
@@ -340,8 +340,8 @@ async function searchTmdb(query, type) {
 function mergeTmdb(target, source) {
     target.id = String(source.id);
     target.tmdbId = source.id;
-    target.posterPath = source.poster_path ? `https://image.tmdb.org/t/p/w500${source.poster_path}` : target.posterPath;
-    target.backdropPath = source.backdrop_path ? `https://image.tmdb.org/t/p/w780${source.backdrop_path}` : "";
+    target.posterPath = source.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${source.poster_path}` : target.posterPath;
+    target.backdropPath = source.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${source.backdrop_path}` : "";
     
     const date = source.first_air_date || source.release_date || "";
     const genreText = getGenreText(source.genre_ids);

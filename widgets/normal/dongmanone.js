@@ -313,8 +313,8 @@ async function sanitizeAndEnsureTmdb(items) {
                 genreTitle: getGenreText(tmdbMatch.genre_ids),
                 description: tmdbMatch.first_air_date || tmdbMatch.release_date || parseDate(rawDate) || "即将播出",
                 releaseDate: tmdbMatch.first_air_date || tmdbMatch.release_date || parseDate(rawDate),
-                posterPath: tmdbMatch.poster_path ? `https://image.tmdb.org/t/p/w500${tmdbMatch.poster_path}` : "",
-                backdropPath: tmdbMatch.backdrop_path ? `https://image.tmdb.org/t/p/w780${tmdbMatch.backdrop_path}` : "",
+                posterPath: tmdbMatch.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${tmdbMatch.poster_path}` : "",
+                backdropPath: tmdbMatch.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${tmdbMatch.backdrop_path}` : "",
                 rating: tmdbMatch.vote_average ? tmdbMatch.vote_average.toFixed(1) : (item.rating || "0.0")
             };
         }
@@ -337,8 +337,8 @@ function buildTmdbItem(item, forceType) {
         genreTitle: getGenreText(item.genre_ids),
         description: item.first_air_date || item.release_date || "未知",
         releaseDate: item.first_air_date || item.release_date || "",
-        posterPath: item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : "",
-        backdropPath: item.backdrop_path ? `https://image.tmdb.org/t/p/w780${item.backdrop_path}` : "",
+        posterPath: item.poster_path ? `https://tmdb.jane77u.gq/t/p/w500${item.poster_path}` : "",
+        backdropPath: item.backdrop_path ? `https://tmdb.jane77u.gq/t/p/w780${item.backdrop_path}` : "",
         rating: item.vote_average ? item.vote_average.toFixed(1) : "0.0"
     };
 }
@@ -353,8 +353,8 @@ function buildItem({ id, tmdbId, type, title, date, poster, backdrop, rating, ge
         genreTitle: genreText || "动画", 
         description: date || subTitle || "暂无日期", 
         releaseDate: date,
-        posterPath: poster ? `https://image.tmdb.org/t/p/w500${poster}` : "",
-        backdropPath: backdrop ? `https://image.tmdb.org/t/p/w780${backdrop}` : "",
+        posterPath: poster ? `https://tmdb.jane77u.gq/t/p/w500${poster}` : "",
+        backdropPath: backdrop ? `https://tmdb.jane77u.gq/t/p/w780${backdrop}` : "",
         rating: rating ? Number(rating).toFixed(1) : "0.0"
     };
 }
